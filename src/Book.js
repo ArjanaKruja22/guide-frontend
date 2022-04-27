@@ -1,11 +1,17 @@
 import React from "react";
 import './Main.css';
+import Header from './Header';
+import Contacts from './contacts';
+import SocialFollow from "./SocialFollow";
 
 
 function Book(){
 
   return(
+    <div>
+      <Header />
    <div className="book">
+     
      <fieldset>
        <div className="table">
          <h1>Book Now !!!</h1>
@@ -88,6 +94,10 @@ function Book(){
         </table>
        </div>
      </fieldset>
+     
+   </div>
+   <Contacts />
+   <SocialFollow />
    </div>
   )
       

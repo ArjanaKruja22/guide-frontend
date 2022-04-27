@@ -218,4 +218,10 @@ a.instagram {
   text-align: center;
   cursor: pointer;
  }
+ .book{
+   display: flex;
+   justify-content: center;
+   padding: 100px;
+ 
+ }
  
