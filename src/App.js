@@ -7,32 +7,32 @@ import {Link} from "react-router-dom";
 import SocialFollow from "./SocialFollow"
 import Header from "./Header";
 
-
-
+   //HOOKS
+  
 function Home() { 
     //Declare a new state variable, which we'll call filter,guides,filterType
-    const [filter, setFilter] = useState("");
-    const [guides, setGuides] = useState([]);
+    const [filter, setFilter] = useState(""); //By calling the useState hook, we can declare a “state variable”,[]-2 new variables created
+    const [guides, setGuides] = useState([]); 
     const [filterType, setFilterType] = useState("name");
 
-    const getData = () => {
-        if (filter === "") {
+    const getData = () => { //create a function to get data from our backend API 
+        if (filter === "") { //condition to call all the guides we have
             fetch("http://localhost:8080/guides/")
                 .then(res => res.json())
                 .then(json => setGuides(json));
         }
-        else {
+        else {  //condition to filter our guides based on its name, declared at the begining
             fetch("http://localhost:8080/guides/" + filterType + "/" + filter)
                 .then(res => res.json())
                 .then(json => setGuides(json));
         }
     }
-
-    useEffect(() => {
+                       //we can replicate the functionalities of core lifecycle components such as componentDidUpdate, componentDidMount or componentWillUnmount
+    useEffect(() => { //allows us to execute the React code when the component is already placed in the DOM
         fetch("http://localhost:8080/guides").then(res => res.json()).then(json => setGuides(json));
     }, []);
 
-    const images = [
+    const images = [ //slider
         { url: "https://wallpaperaccess.com/full/185289.jpg" },
         { url: "https://wallpaperaccess.com/full/129471.jpg" },
         { url: "https://wallpaperaccess.com/full/383910.jpg" },
@@ -51,6 +51,7 @@ function Home() {
       
 
     return (
+        //returned our HTML parts 
         <div className="main-body">
 
             
@@ -123,7 +124,7 @@ function Home() {
         </div>
     )
 }
-export default function App(){
+export default function App(){ //returned components created in different pages
     return <div class="wrapper">
     <Header/>
     <Home />

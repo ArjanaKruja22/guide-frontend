@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Contacts(){
     return (
-        <div className='Bottom'>
+        <div className='Bottom' >
         <p>
           <b>Guide Tour. All rights reserved.</b>
           <br/>

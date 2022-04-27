@@ -89,7 +89,7 @@ function Book(){
                 </select>
               </td>
             </tr>
-            <button>Book</button>
+            <button className="book-btn">Book</button>
           </tbody>
         </table>
        </div>
